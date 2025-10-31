@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Techenix
+              Mazhil Tech Solutions
             </span>
             <span className="text-sm text-muted-foreground">© 2024 All rights reserved</span>
           </div>
