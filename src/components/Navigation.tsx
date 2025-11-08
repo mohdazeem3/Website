@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +12,10 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/">
+            <Link to="/" className="flex items-center gap-3">
+              <img src={logo} alt="Mazhil Tech Solutions Logo" className="h-10 w-auto" /> 
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Mazhil Tech Solutions
+                Mazhil Tech Solutions!
               </span>
             </Link>
           </div>
