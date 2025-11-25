@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Code, Users, Zap, CheckCircle, Sparkles, Award, Target, TrendingUp, Shield, Clock } from "lucide-react";
+import heroTechBg from "@/assets/hero-tech.jpeg";
 
 const Index = () => {
   return (
@@ -12,8 +13,20 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--gradient-hero))] opacity-50"></div>
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 z-0 opacity-30"
+          style={{
+            backgroundImage: `url(${heroTechBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--gradient-hero))] opacity-60"></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        
+        
         
         <div className="container mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">

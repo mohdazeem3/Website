@@ -2,8 +2,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 import { ShoppingCart, BarChart3, Users2, FileText, Calendar, MessageSquare } from "lucide-react";
+import ecommerceImg from "@/assets/ecommerce.jpg";
+import analyticsImg from "@/assets/analytics.jpeg";
+import crmImg from "@/assets/crm.jpeg";
+import documentsImg from "@/assets/documents.jpeg";
+import bookingImg from "@/assets/booking.jpeg";
+import collaborationImg from "@/assets/colloboration.jpeg";
 
 const Products = () => {
   const products = [
@@ -11,37 +18,43 @@ const Products = () => {
       icon: ShoppingCart,
       title: "E-Commerce Platform",
       description: "Complete online store solution with inventory management, payment processing, and order tracking",
-      features: ["Product catalog", "Shopping cart", "Payment gateway", "Order management"]
+      features: ["Product catalog", "Shopping cart", "Payment gateway", "Order management"],
+      image: ecommerceImg
     },
     {
       icon: BarChart3,
       title: "Business Analytics Dashboard",
       description: "Data visualization and reporting tools to track your business metrics in real-time",
-      features: ["Real-time analytics", "Custom reports", "Data visualization", "Export capabilities"]
+      features: ["Real-time analytics", "Custom reports", "Data visualization", "Export capabilities"],
+      image: analyticsImg
     },
     {
       icon: Users2,
-      title: "CRM System",
-      description: "Customer relationship management software to streamline sales and customer interactions",
-      features: ["Contact management", "Sales pipeline", "Email integration", "Task automation"]
+      title: "Overseas Education Consultancy CRM",
+      description: "Our CRM product automates the workflow of Overseas education consultancy team.",
+      features: ["Lead generation and Documentation", "Students counselling", "Interview scheduling", "VISA Process, Tracks students medical record"],
+      image: crmImg
     },
     {
       icon: FileText,
       title: "Document Management",
       description: "Organize, store, and retrieve documents with powerful search and collaboration features",
-      features: ["Cloud storage", "Version control", "Access permissions", "Search & filter"]
+      features: ["Cloud storage", "Version control", "Access permissions", "Search & filter"],
+      image: documentsImg
     },
     {
       icon: Calendar,
       title: "Booking & Scheduling",
       description: "Online appointment scheduling system with calendar sync and automated reminders",
-      features: ["Calendar integration", "Email reminders", "Payment collection", "Client portal"]
+      features: ["Calendar integration", "Email reminders", "Payment collection", "Client portal"],
+      image: bookingImg
     },
     {
       icon: MessageSquare,
       title: "Team Collaboration Tool",
       description: "Enhance team productivity with chat, file sharing, and project management features",
-      features: ["Team messaging", "File sharing", "Task tracking", "Video calls"]
+      features: ["Team messaging", "File sharing", "Task tracking", "Video calls"],
+      image: collaborationImg
     }
   ];
 
@@ -68,7 +81,14 @@ const Products = () => {
             {products.map((product, index) => {
               const Icon = product.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
+                  <AspectRatio ratio={16 / 9}>
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="object-cover w-full h-full"
+                    />
+                  </AspectRatio>
                   <CardHeader>
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-primary" />

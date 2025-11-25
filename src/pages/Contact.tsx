@@ -118,7 +118,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+91-1234567890"
                       />
                     </div>
 
@@ -155,8 +155,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-sm text-muted-foreground">info@mazhiltech.com</p>
-                      <p className="text-sm text-muted-foreground">support@mazhiltech.com</p>
+                      <p className="text-sm text-muted-foreground">admin@mazhiltech.com</p>
                     </div>
                   </div>
                 </CardContent>
@@ -170,7 +169,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-sm text-muted-foreground">+91-9488222331</p>
                       <p className="text-sm text-muted-foreground">Mon-Fri, 9AM-6PM</p>
                     </div>
                   </div>
@@ -185,8 +184,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Office</h3>
-                      <p className="text-sm text-muted-foreground">123 Tech Street</p>
-                      <p className="text-sm text-muted-foreground">Silicon Valley, CA 94025</p>
+                      <p className="text-sm text-muted-foreground">Ramani's Mayuri, Chinnavedampatti,</p>
+                      <p className="text-sm text-muted-foreground">COIMBATORE, TN 641049</p>
                     </div>
                   </div>
                 </CardContent>

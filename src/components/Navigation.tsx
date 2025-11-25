@@ -15,7 +15,7 @@ const Navigation = () => {
             <Link to="/" className="flex items-center gap-3">
               <img src={logo} alt="Mazhil Tech Solutions Logo" className="h-10 w-auto" /> 
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Mazhil Tech Solutions!
+                Mazhil Tech Solutions
               </span>
             </Link>
           </div>
