@@ -63,7 +63,7 @@ const Contact = () => {
             {/* LEFT SIDE — Logo */}
             <div className="flex justify-center lg:justify-start">
               <img
-                src="assets\logo.png"
+                src="src\assets\logo.png"
                 alt="Company Logo"
                 className="object-contain rounded-xl shadow-lg"
                 style={{
