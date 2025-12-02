@@ -36,7 +36,7 @@ const Index = () => {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-              We build your{" "}
+              We build {" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 Your Softwares
               </span>
