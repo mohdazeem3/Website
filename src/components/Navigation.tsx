@@ -22,13 +22,13 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-foreground/80 hover:text-foreground transition-colors">
+            <Link to="/" className="text-foreground/80 hover:text-foreground transition-colors text-black">
               Home
             </Link>
-            <Link to="/products" className="text-foreground/80 hover:text-foreground transition-colors">
+            <Link to="/products" className="text-foreground/80 hover:text-foreground transition-colors text-black">
               Our Products
             </Link>
-            <Link to="/contact" className="text-foreground/80 hover:text-foreground transition-colors">
+            <Link to="/contact" className="text-foreground/80 hover:text-foreground transition-colors text-black">
               Contact Us
             </Link>
           </div>

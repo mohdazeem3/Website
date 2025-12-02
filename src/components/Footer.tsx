@@ -7,10 +7,10 @@ const Footer = () => {
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Mazhil Tech Solutions
             </span>
-            <span className="text-sm text-muted-foreground">© 2024 All rights reserved</span>
+            <span className="text-sm text-muted-foreground">© 2023 All rights reserved</span>
           </div>
           
-          <div className="flex gap-6 text-sm text-muted-foreground">
+          <div className="flex gap-6 text-sm text-muted-foreground text-black">
             <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-foreground transition-colors">Contact</a>

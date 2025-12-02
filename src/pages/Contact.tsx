@@ -20,7 +20,6 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
@@ -30,13 +29,11 @@ const Contact = () => {
       return;
     }
 
-    // Show success message
     toast({
       title: "Message Sent!",
       description: "We'll get back to you as soon as possible",
     });
 
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -57,16 +54,43 @@ const Contact = () => {
       <Navigation />
       
       {/* Header Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-            Get in <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible
-          </p>
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 -z-10"></div>
+
+        <div className="container mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+            {/* LEFT SIDE — Logo */}
+            <div className="flex justify-center lg:justify-start">
+              <img
+                src="src\assets\logo.png"
+                alt="Company Logo"
+                className="object-contain rounded-xl shadow-lg"
+                style={{
+                  width: "260px",
+                  height: "260px",
+                }}
+              />
+            </div>
+
+            {/* RIGHT SIDE — Title + Text */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+                Get in{" "}
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient">
+                  Touch
+                </span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-xl">
+                Have a project in mind? We'd love to hear from you.
+                Send us a message and we'll respond as soon as possible.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
+
 
       {/* Contact Content */}
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
@@ -75,7 +99,7 @@ const Contact = () => {
             
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <Card>
+              <Card className="bg-white/70 backdrop-blur-lg border border-primary/20 shadow-lg transition-all hover:shadow-2xl">
                 <CardContent className="p-6">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
@@ -137,7 +161,7 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
+                    <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-primary to-accent text-white hover:scale-105 transition-transform">
                       Send Message
                     </Button>
                   </form>
@@ -147,7 +171,7 @@ const Contact = () => {
 
             {/* Contact Information */}
             <div className="space-y-6">
-              <Card>
+              <Card className="hover:scale-105 transition-transform shadow-md hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -161,7 +185,7 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="hover:scale-105 transition-transform shadow-md hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -176,7 +200,7 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="hover:scale-105 transition-transform shadow-md hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -192,6 +216,20 @@ const Contact = () => {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* About Us / Our History - moved below contact */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="container mx-auto">
+          <Card className="bg-gradient-to-r from-primary/10 to-accent/10 p-6 shadow-lg backdrop-blur-md border border-primary/20 hover:shadow-2xl transition-all">
+            <CardContent>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary">Our History</h2>
+              <p className="text-muted-foreground text-lg ">
+                MAZHILTECH SOLUTIONS was founded in 2023 by a small group of software developers with a passion for helping businesses succeed with innovative solutions. We specialize in digitalizing software strategies that are designed to grow your business, increase your online presence, and engage your target audience.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

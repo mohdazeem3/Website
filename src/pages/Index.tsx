@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Code, Users, Zap, CheckCircle, Sparkles, Award, Target, TrendingUp, Shield, Clock } from "lucide-react";
 import heroTechBg from "@/assets/hero-tech.jpeg";
+import heroRight from "@/assets/right-hero.avif";
+import leftBottom from "@/assets/left-bottom.avif"; 
 
 const Index = () => {
   return (
@@ -24,54 +26,47 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--gradient-hero))] opacity-60"></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        
-        
-        
-        
-        <div className="container mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Custom Software Experts</span>
-          </div>
-          
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            Custom Software Solutions for{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-              Your Business
-            </span>
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-fade-in">
-            At Mazhil Tech Solutions, we create tailored software that perfectly matches your unique requirements
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in">
-            <Link to="/contact">
-              <Button size="lg" className="group">
-                Get Started
-                <Sparkles className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/products">
-              <Button size="lg" variant="outline">View Products</Button>
-            </Link>
+
+        <div className="container mx-auto relative z-10 flex flex-col-reverse lg:flex-row items-center">
+          {/* Left: Text */}
+          <div className="text-center lg:text-left lg:w-1/2 space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-black">Ecstatic software solution </span>
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+              We build your{" "}
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                Your Softwares
+              </span>
+            </h1>
+
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-3xl animate-fade-in">
+              At Mazhil Tech Solutions, we create tailored software that perfectly matches your unique requirements
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16 animate-fade-in">
+              <Link to="/contact">
+                <Button size="lg" className="group">
+                  Get Started
+                  <Sparkles className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/products">
+                <Button size="lg" variant="outline">View Products</Button>
+              </Link>
+            </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto animate-fade-in">
-            {[
-              { value: "100+", label: "Projects Delivered" },
-              { value: "50+", label: "Happy Clients" },
-              { value: "10+", label: "Years Experience" },
-              { value: "24/7", label: "Support Available" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+          {/* Right: Hero Image */}
+          <div className="lg:w-1/2 mb-12 lg:mb-0 flex justify-center">
+            <img
+  src={heroRight}
+  alt="Tech illustration"
+  className="rounded-3xl shadow-xl max-w-full animate-fade-in"
+/>
+
           </div>
         </div>
       </section>
@@ -108,9 +103,20 @@ const Index = () => {
             ].map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="group hover:shadow-elegant transition-all duration-300 border-border/50 hover:border-primary/50">
+                <Card key={index} className="
+                  group
+                  bg-[#FFF1F2]/80 backdrop-blur-xl
+                  border border-transparent
+                  hover:border-primary/40
+                  hover:bg-[#FFE4E7]/90
+                  transition-all duration-300
+                  hover:shadow-[0_8px_30px_rgba(255,72,92,0.20)]
+                  rounded-2xl
+                ">
                   <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6
+                                    bg-gradient-to-br from-primary/10 to-accent/10
+                                    group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-8 h-8 text-primary" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
@@ -124,41 +130,39 @@ const Index = () => {
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Approach</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A proven process that delivers results
-            </p>
-          </div>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5">
+        <div className="text-center mb-16 p-6 rounded-3xl">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Approach</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A proven process that delivers results
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[
-              { icon: Target, step: "01", title: "Understand", description: "We analyze your needs and requirements" },
-              { icon: Code, step: "02", title: "Design", description: "Create tailored solutions architecture" },
-              { icon: Zap, step: "03", title: "Develop", description: "Build with best practices and quality" },
-              { icon: Award, step: "04", title: "Deliver", description: "Deploy and provide ongoing support" }
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div key={index} className="relative">
-                  <Card className="h-full hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="text-6xl font-bold text-primary/10 mb-4">{item.step}</div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              );
-            })}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {[
+            { icon: Target, step: "01", title: "Understand", description: "We analyze your needs and requirements" },
+            { icon: Code, step: "02", title: "Design", description: "Create tailored solutions architecture" },
+            { icon: Zap, step: "03", title: "Develop", description: "Build with best practices and quality" },
+            { icon: Award, step: "04", title: "Deliver", description: "Deploy and provide ongoing support" }
+          ].map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="relative">
+                <Card className="h-full hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="text-6xl font-bold text-primary/10 mb-4">{item.step}</div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -198,11 +202,20 @@ const Index = () => {
               </div>
             </div>
 
+            {/* Card with Background Image */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl"></div>
-              <Card className="relative border-2 border-primary/20">
-                <CardContent className="p-8">
-                  <div className="space-y-6">
+              <Card className="relative border-2 border-primary/20 overflow-hidden rounded-3xl">
+                <CardContent
+                  className="p-8 relative"
+                  style={{
+                    backgroundImage: `url('https://images.unsplash.com/photo-1557683316-973673baf926?blur=40')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
+                  <div className="absolute inset-0 bg-white/50 backdrop-blur-sm rounded-3xl"></div>
+                  <div className="relative space-y-6">
                     <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl">
                       <Code className="w-8 h-8 text-primary" />
                       <div>
@@ -233,32 +246,47 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
-        <div className="container mx-auto text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Ready to Transform Your{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Business?
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-10">
-              Let's discuss your project and create something amazing together
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button size="lg" className="group">
-                  Start Your Project
-                  <Sparkles className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
-                </Button>
-              </Link>
-              <Link to="/products">
-                <Button size="lg" variant="outline">Explore Our Products</Button>
-              </Link>
-            </div>
-          </div>
+<section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
+  <div className="container mx-auto">
+    <div className="flex flex-col lg:flex-row items-center gap-12">
+      
+      {/* Left: Image */}
+      <div className="lg:w-1/2 flex justify-center">
+        <img
+          src={leftBottom}
+          alt="Transform Business"
+          className="rounded-3xl shadow-xl max-w-full animate-fade-in"
+        />
+      </div>
+
+      {/* Right: Text */}
+      <div className="lg:w-1/2 text-center lg:text-left space-y-6">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Ready</span> to Transform Your{" "}
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Business?
+          </span>
+        </h2>
+        <p className="text-xl text-muted-foreground mb-6">
+          Let's discuss your project and create something amazing together
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <Link to="/contact">
+            <Button size="lg" className="group">
+              Start Your Project
+              <Sparkles className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
+            </Button>
+          </Link>
+          <Link to="/products">
+            <Button size="lg" variant="outline">Explore Our Products</Button>
+          </Link>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       <Footer />
     </div>
